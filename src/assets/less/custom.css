@@ -1,0 +1,36 @@
+/* scrolltop style s */
+.long {
+  display: none;
+  width: 100%;
+}
+.long.scroll {
+  display: block;
+  z-index: 9;
+}
+.long .scroll {
+  width: 52px;
+  height: 52px;
+  position: fixed;
+  bottom: 30px;
+  right: 10px;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  border-color: transparent;
+  background-color: #7773A8;
+  font-size: 14.81481481px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.long .scroll:focus {
+  outline: 0;
+}
+.long .scroll .fa-angle-up:before {
+  font-size: 20px;
+  font-weight: 800;
+}
+.long .text-uppercase {
+  display: block;
+  text-transform: uppercase;
+}
+/* scrolltop style e */

@@ -3,12 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "font-awesome": "^4.7.0",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
-    "react-scripts": "2.1.5"
+    "react-less-watcher": "^1.1.4",
+    "react-scripts": "2.1.5",
+    "react-webpack": "^0.4.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "watch-less": "react-less-watcher -d src/assets/less",
+    "start": "react-scripts start&npm run watch-less",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -21,5 +25,11 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "webpack-cli": "^3.2.3"
+  },
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }

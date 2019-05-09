@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './assets/css/index.css';
+import './assets/css/App.css';
+import './assets/less/custom.css';
+import '../node_modules/font-awesome/css/font-awesome.min.css'
+import App from './components/App'; 
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
