@@ -1,28 +1,21 @@
 import React from 'react';
-import ScrollApp from './ScrollApp';
+// import ScrollApp from './ScrollApp';
+import Header from '../header';
 // import GoTop from './GoTop';
-import { ReactComponent as SVGLogo } from '../assets/images/logo.svg';
-import Form from './Form'
+// import { ReactComponent as SVGLogo } from '../assets/images/logo.svg';
+import { Container, Row } from 'react-bootstrap';
+// import Form from './Form'
 const App = () => {
   return (
-    <div className="App-header">
-      <header className="">
-        <SVGLogo className='App-logo' />
-        <div className='alert alert-primary'>Deepak</div>
-        <div className='alert alert-danger'>Deepak</div>
-        <Form />
-        <p>Deepak</p>
-        <p>Deepak</p>
-        <p>Deepak</p>
-        <p>Deepak</p>
-        <p>Deepak</p>
-        <p>Deepak</p>
-        <p>Deepak</p>
-        <p>Deepak</p>
-        <ScrollApp />
-        {/* <GoTop /> */}
-      </header>
-    </div>
+    <Container>
+      <Row>
+        <header className="">
+          <Header />
+        </header>
+      </Row>
+      {/* <SVGLogo className='App-logo' /> */}
+      {/* <Form /> */}
+    </Container>
   );
 }
 
