@@ -3,16 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bootstrap": "^4.3.1",
     "font-awesome": "^4.7.0",
+    "node-sass": "^4.13.0",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
-    "react-less-watcher": "^1.1.4",
     "react-scripts": "^3.2.0",
     "react-webpack": "^0.4.1"
   },
   "scripts": {
-    "watch-less": "react-less-watcher -d src/assets/less",
-    "start": "react-scripts start&npm run watch-less",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
