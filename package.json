@@ -7,7 +7,7 @@
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-less-watcher": "^1.1.4",
-    "react-scripts": "2.1.5",
+    "react-scripts": "^3.2.0",
     "react-webpack": "^0.4.1"
   },
   "scripts": {
