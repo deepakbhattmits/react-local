@@ -1,25 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
+// import '../assets/less/custom.less';
 
-class ScrollButton extends Component {
-
-  state = {
-    intervalId: 0
-  };
-
-  scrollStep = () => {
-    // console.log("scroll")
+class ScrollButton extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      intervalId: 0
+    };
+  }
+  scrollStep() {
     if (window.pageYOffset === 0) {
       clearInterval(this.state.intervalId);
     }
-    window.scroll(0, window.pageYOffset - this.props.scrollStepInPx); // here the props
+    window.scroll(0, window.pageYOffset - this.props.scrollStepInPx);
   }
-  scrollToTop = () => {
-    let intervalId = setInterval(this.scrollStep.bind(this), this.props.delayInMs); // here the props
+  scrollToTop() {
+    let intervalId = setInterval(this.scrollStep.bind(this), this.props.delayInMs);
     this.setState({ intervalId: intervalId });
   }
   render() {
     return <button title='Back to top' className='scroll'
-      onClick={this.scrollToTop}>
+      onClick={() => { this.scrollToTop(); }}>
       <i className='fa fa-angle-up'></i>
       <span className='text-uppercase'>top</span>
     </button>;
@@ -27,33 +28,27 @@ class ScrollButton extends Component {
 }
 
 
-class ScrollApp extends Component {
-  handleScroll = () => {
-    const element = document.getElementById('BottomTopScroll');
-    const h = window.innerHeight;
-    if (h > 5) {
-      if (window.scrollY > 6) {
-        element.classList.add('scroll');
+class ScrollApp extends React.Component {
 
-      } else {
-        element.classList && element.classList.remove('scroll');
-      }
-    }
-  }
+  // eslint-disable-next-line class-methods-use-this
   componentDidMount() {
-    console.log('ADDED');
-    window.addEventListener('scroll', this.handleScroll)
-  }
-  componentDidUnMount() {
-    console.log('REMOVED');
-    window.removeEventListener('scroll', this.handleScroll)
+    window.addEventListener('scroll', () => {
+      const element = document.getElementById('BottomTopScroll');
+      const h = window.innerHeight;
+      if (h > 5) {
+        if (window.scrollY > 6) {
+          element.classList.add('scroll');
+
+        } else {
+          element.classList && element.classList.remove('scroll');
+        }
+      }
+    });
   }
   render() {
-    return (
-      <div id="BottomTopScroll" className="long">
-        <ScrollButton scrollStepInPx="50" delayInMs="25.66" /> {/* upper container */}
-      </div>
-    );
+    return <div id="BottomTopScroll" className="long">
+      <ScrollButton scrollStepInPx="50" delayInMs="25.66" />
+    </div>
   }
 }
 export default ScrollApp;
