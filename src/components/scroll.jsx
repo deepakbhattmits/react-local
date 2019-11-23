@@ -1,35 +1,25 @@
-import React from 'react';
-class ScrollButton extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      intervalId: 0
-    };
-  }
-  scrollStep() {
+import React, { useState, useEffect } from 'react';
+const ScrollButton = props => {
+  const [intervalId, setIntervalId] = useState(0);
+  const scrollStep = () => {
     if (window.pageYOffset === 0) {
-      clearInterval(this.state.intervalId);
+      clearInterval(intervalId);
     }
-    window.scroll(0, window.pageYOffset - this.props.scrollStepInPx);
+    window.scroll(0, window.pageYOffset - props.scrollStepInPx);
   }
-  scrollToTop() {
-    let intervalId = setInterval(this.scrollStep.bind(this), this.props.delayInMs);
-    this.setState({ intervalId: intervalId });
+  const scrollToTop = () => {
+    let intervalId = setInterval(scrollStep.bind(this), props.delayInMs);
+    setIntervalId(intervalId);
   }
-  render() {
-    return <button title='Back to top' className='scroll'
-      onClick={() => { this.scrollToTop(); }}>
-      <i className='fa fa-angle-up'></i>
-      <span className='text-uppercase'>top</span>
-    </button>;
-  }
+  return (<button title='Back to top' className='scroll'
+    onClick={() => { scrollToTop(); }}>
+    <i className='fa fa-angle-up'></i>
+    <span className='text-uppercase'>top</span>
+  </button>);
 }
-
-
-class ScrollApp extends React.Component {
-
+const ScrollApp = () => {
   // eslint-disable-next-line class-methods-use-this
-  componentDidMount() {
+  useEffect(() => {
     window.addEventListener('scroll', () => {
       const element = document.getElementById('BottomTopScroll');
       const h = window.innerHeight;
@@ -42,11 +32,10 @@ class ScrollApp extends React.Component {
         }
       }
     });
-  }
-  render() {
-    return <div id="BottomTopScroll" className="long">
-      <ScrollButton scrollStepInPx="50" delayInMs="25.66" />
-    </div>
-  }
+  }, [])
+  return (<div id="BottomTopScroll" className="long">
+    <ScrollButton scrollStepInPx="50" delayInMs="25.66" />
+  </div >);
+
 }
 export default ScrollApp;
