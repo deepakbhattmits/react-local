@@ -1,43 +1,38 @@
 import React from 'react';
 import ScrollApp from './components/ScrollApp';
-import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
+// import { Navbar, Nav, Collapse } from 'react-bootstrap';
+import { Navbar, Nav } from "react-bootstrap";
 
 
 
 const Header = () => {
+
   return (
-    <div >
-      <Navbar collapseOnSelect>
-        <Navbar.Header>
-          <Navbar.Brand>Logo</Navbar.Brand>
-          <Navbar.Toggle />
-        </Navbar.Header>
+    < >
+      {/* <Navbar bg="light" variant="light" fluid="true" onClick={toggleNavbar}>
+        <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+        <Collapse >
+          <Nav className="mr-auto">
+            <Nav.Link href="#home" onClick={closeNavbar}>Home</Nav.Link>
+            <Nav.Link href="#features" onClick={closeNavbar}>Features</Nav.Link>
+            <Nav.Link href="#pricing" onClick={closeNavbar}>Pricing</Nav.Link>
+          </Nav>
+        </Collapse>
+      </Navbar> */}
+      <Navbar bg="dark" variant="dark" fluid="true" collapseOnSelect>
+
+        <Navbar.Brand>Logo</Navbar.Brand>
+        <Navbar.Toggle />
         <Navbar.Collapse>
           <Nav className="mr-auto">
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#features">Features</Nav.Link>
             <Nav.Link href="#pricing">Pricing</Nav.Link>
           </Nav>
-          <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-info">Search</Button>
-          </Form>
         </Navbar.Collapse>
       </Navbar>
-      {/* <Navbar bg="light" variant="light">
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-          <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-          </Nav>
-          <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-info">Search</Button>
-          </Form>
-        </Navbar> */}
       <ScrollApp />
-    </div>
+    </>
   );
 }
 

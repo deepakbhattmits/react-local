@@ -9,9 +9,7 @@ const App = () => {
   return (
     <Container>
       <Row>
-        <header className="">
-          <Header />
-        </header>
+        <Header />
       </Row>
       {/* <SVGLogo className='App-logo' /> */}
       {/* <Form /> */}
