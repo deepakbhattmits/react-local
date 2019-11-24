@@ -43,7 +43,7 @@ const Form = () => {
                     <input className="form-check-input" type="checkbox" id="gridCheck" />
                     <label className="form-check-label" htmlFor="gridCheck">
                         Check me out
-      </label>
+                    </label>
                 </div>
             </div>
             <button type="submit" className="btn btn-primary">Sign in</button>
