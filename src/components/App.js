@@ -3,14 +3,15 @@ import React from 'react';
 import Header from '../header';
 // import GoTop from './GoTop';
 // import { ReactComponent as SVGLogo } from '../assets/images/logo.svg';
-// import Form from './Form'
+import FormComponent from './FormComponent'
+import { Container } from 'react-bootstrap';
 const App = () => {
   return (
-    <>
+    <Container>
       <Header />
       {/* <SVGLogo className='App-logo' /> */}
-      {/* <Form /> */}
-    </>
+      <FormComponent />
+    </Container>
   );
 }
 
